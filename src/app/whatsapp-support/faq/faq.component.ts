@@ -1,21 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostBinding, OnInit, QueryList, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-faq',
   templateUrl: './faq.component.html',
   styleUrls: ['./faq.component.scss']
 })
-export class FaqComponent {
+export class FaqComponent implements OnInit, AfterViewInit {
 
   faqImage: string = 'faq-img-1.png';
   isImageAnimation = true;
+  isExpanded = true;
 
   faqs: any = [
     {
       question: "Task and Reminder from chat",
       answer: "Convert important conversations into actionable tasks or reminders, guaranteeing you won't overlook any potential customer.",
       image: "faq-img-1.png"
-
     },
     {
       question: "Convert Every Visitor into a Customer",
@@ -49,14 +49,59 @@ export class FaqComponent {
     }
   ]
 
+  selectedIndex: number = 0;
+
+
+  @ViewChildren('faqSection') faqSection!: QueryList<ElementRef>
+
+  dynamicColor = 0;
+
+  // @HostBinding('style.--time-progress-bar') get myVariable() {
+  //   return this.dynamicColor + '%';
+  // }
+
   constructor() { }
 
-  changefaq(faq: any) {
-    this.faqImage = faq.image;
-    this.isImageAnimation = true;
-    setTimeout(() => {
-      this.isImageAnimation = false;
-    }, 3000)
 
+  ngOnInit(): void {
+
+    // setInterval(() => {
+
+    //   if(this.dynamicColor<100){
+    //   this.dynamicColor ++;
+    //   }
+    // }, 100)
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.faqSection.forEach((ele: ElementRef) => {
+      console.log(ele.nativeElement.querySelector('p').offsetHeight)
+    }))
+  }
+
+  changefaq(faq: any, i: number) {
+
+    this.isImageAnimation=false;
+
+
+    if (this.selectedIndex === i) {
+      this.isExpanded = !this.isExpanded;
+
+
+      if(this.isExpanded){
+        this.isImageAnimation=true;
+      }
+
+    } else {
+      this.isExpanded = false;
+      this.isExpanded = !this.isExpanded;
+
+      if(this.isExpanded){
+        this.isImageAnimation=true;
+      }
+    }
+
+    this.faqImage = faq.image;
+    this.selectedIndex = i;
   }
 }

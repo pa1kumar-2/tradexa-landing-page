@@ -1,5 +1,7 @@
 .faq-container {
-  margin: 100px;
+  margin: auto;
+  max-width: 1500px;
+  padding: 100px;
 
   .title {
     font-size: 2rem;
@@ -17,16 +19,17 @@
     .left-section {
       .question-answer {
         border-top: solid 0.5px #949494;
-        padding: 25px;
+        padding: 15px;
         display: flex;
         flex-direction: column;
         position: relative;
+
 
         h4 {
           font-size: 1.25rem;
           font-weight: 600;
           color: #2a2c30;
-          margin: 0 0 10px;
+          padding: 5px 0;
         }
 
         p {
@@ -34,14 +37,18 @@
           font-size: 1.125rem;
           font-weight: 500;
           color: #717171;
-          height: auto;
+          height: 0;
           display: block;
           overflow: hidden;
-          transition: height 0.3s ease;
+          transition: height 0.3s ease-in-out;
+
+          &.expand{
+            height: 50px;
+          }
         }
 
         &:hover {
-          background-color: #d7dadf26;
+          background-color: #c8c8c81a;
           cursor: pointer;
         }
 
