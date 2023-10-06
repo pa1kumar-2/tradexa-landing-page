@@ -1,0 +1,66 @@
+@import "src/assets/partials/variables";
+@import "src/assets/partials/flex-utility";
+
+header {
+  // display: none !important; //temporary for development
+
+  padding: 20px 30px;
+  @include flexbox();
+  align-items: center;
+  border-bottom: 1px solid rgb(38 46 46 / 10%);
+
+  .logo-container {
+    width: 25%;
+
+    a {
+      all: unset;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        max-width: 130px;
+      }
+    }
+  }
+
+  menu {
+    @include flexbox();
+    justify-content: center;
+    width: 50%;
+
+    ul {
+      @include flexbox();
+      gap: 30px;
+      padding: 0;
+      margin: 0;
+
+      li {
+        list-style-type: none;
+
+        a {
+          all: unset;
+          cursor: pointer;
+          font-size: 1.125rem;
+          color: $color-4;
+          font-weight: 500;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .button-container {
+    @include flexbox();
+    justify-content: flex-end;
+    width: 25%;
+
+    button {
+      all: unset;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 0.875rem;
+      color: $color-1;
+      background-color: $color-4;
+    }
+  }
+}

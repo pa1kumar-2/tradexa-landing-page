@@ -1,0 +1,70 @@
+@import "./assets/partials/variables";
+@import "./assets/partials/flex-utility";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100%;
+}
+
+*:focus {
+  outline: 0 !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  outline: none;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.font-weight-300 {
+  font-weight: 400;
+}
+
+.font-weight-400 {
+  font-weight: 400;
+}
+
+.font-weight-500 {
+  font-weight: 600;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}

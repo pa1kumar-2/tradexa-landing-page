@@ -1,0 +1,17 @@
+// animations
+.page-load {
+    animation-name: smooth-page-landing;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes smooth-page-landing {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  

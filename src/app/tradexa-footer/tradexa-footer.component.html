@@ -1,0 +1,77 @@
+<footer class="footer-container">
+  <div class="contact-section">
+    <img
+      class="tradexa-logo"
+      src="assets/images/Tradexa_withoutTagLine_white.png"
+    />
+    <p class="tradexa-address">
+      Tradexa Technologies, Green Terrace, Lane Number 5, Iricen Railway Colony,
+      Koregaon Park, Pune, Maharashtra 411001
+    </p>
+
+    <div class="social-media">
+      <img src="" alt="" />
+      <img src="" alt="" />
+      <img src="" alt="" />
+      <img src="" alt="" />
+    </div>
+
+    <p class="tradexa-copyright">&copy; 2023 Tradexa Technologies Pvt. Ltd.</p>
+  </div>
+  <div class="webstore-feature-more-container">
+    <div class="services-section">
+      <h4
+        (click)="
+          serviceExpand = !serviceExpand;
+          featureExpand = false;
+          moreExpand = false
+        "
+      >
+        SERVICES
+      </h4>
+      <ul [ngClass]="{ 'service-expand': serviceExpand }">
+        <li>WEBSTORE</li>
+        <li>HYPER INVENTORY</li>
+        <li>BUSINESS APP</li>
+        <li>RETAILER APP</li>
+        <li>SALES TEAM APP</li>
+        <li>PRICING</li>
+      </ul>
+    </div>
+    <div class="features-section">
+      <h4
+        (click)="
+          featureExpand = !featureExpand;
+          moreExpand = false;
+          serviceExpand = false
+        "
+      >
+        FEATURES
+      </h4>
+      <ul [ngClass]="{ 'feature-expand': featureExpand }">
+        <li>Inventory</li>
+        <li>Warehouse Management</li>
+        <li>Multi Sales Channel</li>
+        <li>Order Fulfilment</li>
+        <li>Branch Management</li>
+        <li>In depth Reports</li>
+        <li>Global Products Catalog</li>
+        <li>Inventory Tracking</li>
+        <li>Integrated with tally</li>
+      </ul>
+    </div>
+    <div class="more-section">
+      <h4
+        (click)="
+          moreExpand = !moreExpand; featureExpand = false; serviceExpand = false
+        "
+      >
+        MORE
+      </h4>
+      <ul [ngClass]="{ 'more-expand': moreExpand }">
+        <li>Contact us</li>
+        <li>Product demo</li>
+      </ul>
+    </div>
+  </div>
+</footer>

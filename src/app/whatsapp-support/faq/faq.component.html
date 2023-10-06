@@ -1,0 +1,25 @@
+<div class="faq-container">
+    <h1 class="title">Features that will enhance your Business</h1>
+  
+  
+    <div class="contents">
+      <div class="left-section">
+        <div
+          class="question-answer"
+          *ngFor="let faq of faqs"
+          (click)="changefaq(faq)"
+        >
+          <h4>{{ faq.question }}</h4>
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+  
+      <div class="right-section">
+        <img
+          [src]="'../assets/images/' + faqImage"
+          [ngClass]="{ 'image-animation': isImageAnimation }"
+        />
+      </div>
+    </div>
+  </div>
+  

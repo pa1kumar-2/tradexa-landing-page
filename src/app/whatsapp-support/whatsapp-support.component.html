@@ -1,0 +1,193 @@
+<!-- header -->
+<tradexa-header></tradexa-header>
+
+<!-- banner section -->
+<section class="whatsapp-banner-section">
+  <div class="inner-section-size">
+    <div class="upper-unit">
+      <div
+        class="hero-container"
+        *ngFor="let item of multiHeading; let i = index"
+      >
+        <ng-container *ngIf="currentHeading.index === i">
+          <div class="hero-content" [class]="currentHeading.className">
+            <span>
+              {{ currentHeading.headline }}
+            </span>
+           
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="currentHeading.index === i">
+          <div class="hero-image-container" [class]="currentHeading.className">
+            <img class="hero-image" [src]="item.heroImage" />
+          </div>
+        </ng-container>
+      </div>
+      <div
+        class="dynamic-circle"
+        [ngStyle]="{
+          'background-color': currentHeading.backGroundCircle
+        }"
+      ></div>
+      <small class="secondary-title">via whatsApp</small>
+    </div>
+    <div class="lower-unit">
+      <h1>
+        Use WhatsApp for sales, personalized marketing, real-time support, and
+        customer satisfaction
+      </h1>
+
+      <div class="button-container">
+        <button>Start free Trail</button>
+        <button class="outlined">View Demo</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- benefits section -->
+<section class="benefits-section">
+  <div class="inner-section-size">
+    <h1>Benefits to your business</h1>
+
+    <div class="tiles">
+      <ul>
+        <li *ngFor="let benefit of benefits">
+          <div class="content">
+            <small>{{ benefit.state }}</small>
+            <h2>{{ benefit.heading }}</h2>
+            <caption>
+              {{
+                benefit.caption
+              }}
+            </caption>
+            <div class="dash"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- faq section -->
+<app-faq></app-faq>
+
+<!-- conversion section -->
+<section class="conversion-section">
+  <div class="inner-section-size">
+    <div class="conversion-content">
+      <div class="screen-shot">
+        <img [src]="conversion.imageUrl" />
+      </div>
+
+      <div class="area-content">
+        <div class="icon-container">
+          <img [src]="conversion.iconUrl" />
+          <span>{{ conversion.iconText }}</span>
+        </div>
+        <h2>{{ conversion.title }}</h2>
+        <caption>
+          {{
+            conversion.caption
+          }}
+        </caption>
+        <div>
+          <button>{{ conversion.buttonText }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- join us section -->
+<section class="join-us-section">
+  <div class="inner-section-size">
+    <h1>More Reasons to Join Us</h1>
+    <ul class="content">
+      <li *ngFor="let content of joinUs">
+        <img [src]="content.imgUrl" />
+        <h2>{{ content.title }}</h2>
+        <caption>
+          {{
+            content.caption
+          }}
+        </caption>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- abandoned cart section -->
+<section class="abandoned-section">
+  <div class="inner-section-size">
+    <div class="abandoned-content">
+      <div class="area-content">
+        <h2>{{ abandoned.title }}</h2>
+        <caption>
+          {{
+            abandoned.caption
+          }}
+        </caption>
+        <div>
+          <button>{{ abandoned.buttonText }}</button>
+        </div>
+      </div>
+      <div class="screen-shot">
+        <img [src]="abandoned.imageUrl" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- acquisition section -->
+<section class="acquisition-section">
+  <div class="inner-section-size">
+    <div class="acquisition-content">
+      <div class="screen-shot">
+        <img [src]="acquisition.imageUrl" />
+      </div>
+
+      <div class="area-content">
+        <h2>{{ acquisition.title }}</h2>
+        <caption>
+          {{
+            acquisition.caption
+          }}
+        </caption>
+        <div>
+          <button>{{ acquisition.buttonText }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- experience section -->
+<section class="experience-section">
+  <div class="inner-section-size">
+    <div class="experience-content">
+      <div class="area-content">
+        <h2>{{ experience.title }}</h2>
+        <caption>
+          {{
+            experience.caption
+          }}
+        </caption>
+        <div>
+          <button>{{ experience.buttonText }}</button>
+        </div>
+      </div>
+
+      <div class="screen-shot">
+        <img [src]="experience.imageUrl" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<tradexa-footer></tradexa-footer>
+
+
+
