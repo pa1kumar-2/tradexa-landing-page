@@ -12,11 +12,9 @@
 
   .contents {
     display: flex;
-    .left-section {
-      width: 50%;
-    }
 
     .left-section {
+      width: 45%;
       .question-answer {
         border-top: solid 0.5px #949494;
         padding: 15px;
@@ -30,6 +28,10 @@
           font-weight: 600;
           color: #2a2c30;
           padding: 5px 0;
+
+          &.active{
+            color: #45A6A6;
+          }
         }
 
         p {
@@ -66,7 +68,7 @@
     }
 
     .right-section {
-      width: 50%;
+      width: 55%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -140,7 +142,7 @@
 
 @media only screen and (max-width: 992px) and (min-width: 1px) {
   .faq-container {
-    margin: 40px 25px;
+    padding: 40px 25px;
 
     .title {
       font-size: 2rem;

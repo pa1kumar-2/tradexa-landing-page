@@ -9,7 +9,7 @@
         *ngFor="let faq of faqs; let i = index"
         (click)="changefaq(faq, i)"
       >
-        <h4>{{ faq.question }}</h4>
+        <h4 [ngClass]="{'active': isExpanded && selectedIndex === i}">{{ faq.question }}</h4>
         <p [ngClass]="{ expand: isExpanded && selectedIndex === i }">
           {{ faq.answer }}
         </p>
